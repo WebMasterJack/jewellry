@@ -1,9 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    color: #2c3e50;
+    color: white;
   }
   
   #nav {
@@ -11,10 +10,40 @@
   }
   
   #nav a {
-    font-weight: bold;
-    color: #2c3e50;
+   
+    color: white;
   }
   
   #nav a.router-link-exact-active {
     color: #42b983;
   }
+  
+
+  .logo{
+    background-image: url('../img/diamond-hard.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 100px;
+    min-width: 100px;
+    max-width: 150px;
+  }
+  .logo ~ button{
+    /* background-color: dimgray; */
+  }
+  
+  a{
+    transform: scale(1);
+    transition: all .4s ease !important;
+    font-weight: 300 ;
+    font-size: 1.2rem;
+  }
+  a:hover{
+    color: #4e2edf !important;
+    transform: scale(1.5);
+
+  }
+  .reference h2{
+    text-align: justify;
+  }
+ 

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+#app {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: white;
+  }
+  #nav {
+    padding: 30px;
+    background-image: url('../img/file.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+  #nav a {
+    color: white;
+  }
+
+  
+
+  .logo{
+    background-image: url('../img/diamond-hard.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 100px;
+    min-width: 100px;
+    max-width: 150px;
+  }
+  .logo ~ button{
+    /* background-color: dimgray; */
+  }
+  
+ a{
+    transform: scale(1);
+    text-decoration: none;
+    transition: all .4s ease !important;
+    font-weight: 300 ;
+    font-size: 1.2rem;
+  }
+  nav a:hover{
+    color: #4e2edf !important;
+    transform: scale(1.5);
+
+  }
+  .reference h2{
+    text-align: justify;
+  }
+ .card{
+  max-width:350px;
+  
+  border:none;
+  color:black;
+ }
+
+ 

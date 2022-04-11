@@ -4,19 +4,17 @@
     text-align: center;
     color: white;
   }
-  
   #nav {
     padding: 30px;
+    background-image: url('../img/file.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+
   }
-  
   #nav a {
-   
     color: white;
   }
-  
-  #nav a.router-link-exact-active {
-    color: #42b983;
-  }
+
   
 
   .logo{
@@ -32,13 +30,14 @@
     /* background-color: dimgray; */
   }
   
-  a{
+ a{
     transform: scale(1);
+    text-decoration: none;
     transition: all .4s ease !important;
     font-weight: 300 ;
     font-size: 1.2rem;
   }
-  a:hover{
+  nav a:hover{
     color: #4e2edf !important;
     transform: scale(1.5);
 
@@ -46,4 +45,11 @@
   .reference h2{
     text-align: justify;
   }
+ .card{
+  max-width:350px;
+  
+  border:none;
+  color:black;
+ }
+
  

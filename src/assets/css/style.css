@@ -15,7 +15,9 @@
     color: white;
   }
 
-  
+  .container {
+    margin: 0 auto;
+  }
 
   .logo{
     background-image: url('../img/diamond-hard.svg');
@@ -30,14 +32,14 @@
     /* background-color: dimgray; */
   }
   
- a{
+ a,.card-title a{
     transform: scale(1);
     text-decoration: none;
     transition: all .4s ease !important;
     font-weight: 300 ;
-    font-size: 1.2rem;
+    font-size: 20px;
   }
-  nav a:hover{
+  nav a:hover,.card-title a:hover{
     color: #4e2edf !important;
     transform: scale(1.5);
 
@@ -57,8 +59,55 @@
   margin-bottom: 10px;
   padding: 0;
   border:none;
-  color:black;
+  color:whitesmoke;
+ }
+ .card-body{
+   background:black;
+ }
+ .card-img-top{
+  max-height: 300px;
+  min-height: 300px;
+  max-width: 400px;
  }
 
 
- 
+ .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.rings{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+}

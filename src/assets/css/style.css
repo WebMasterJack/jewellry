@@ -4,43 +4,29 @@
     text-align: center;
     color: white;
   }
-  #nav {
-    padding: 30px;
-    background-image: url('../img/file.gif');
-    background-repeat: no-repeat;
-    background-size: cover;
-
+  .nav-link{
+    color: white
   }
-  #nav a {
-    color: white;
+  #pills-tab .nav-link.active {
+    background-color: #0d273b !important;
   }
 
   .container {
     margin: 0 auto;
   }
-
-  .logo{
-    background-image: url('../img/diamond-hard.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 20%;
-    height: 100px;
-    min-width: 100px;
-    max-width: 150px;
-  }
-  .logo ~ button{
-    /* background-color: dimgray; */
-  }
-  
+.home{
+  background: #02192b;
+}
  a,.card-title a{
     transform: scale(1);
     text-decoration: none;
     transition: all .4s ease !important;
     font-weight: 300 ;
     font-size: 20px;
+    color: white
   }
   nav a:hover,.card-title a:hover{
-    color: #4e2edf !important;
+    color: #0d6efd !important;
     transform: scale(1.5);
 
   }
@@ -49,6 +35,8 @@
   }
   .card-group{
     row-gap: 10px;
+    min-height:100vh;
+    padding-top: 40px;
   }
   .card-group > div{
     display: flex;
@@ -70,7 +58,9 @@
   max-width: 400px;
  }
 
-
+#pills-tab{
+  place-content: center;
+}
  .tab {
   overflow: hidden;
   border: 1px solid #ccc;
@@ -105,9 +95,12 @@
   border: 1px solid #ccc;
   border-top: none;
 }
-.rings{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-    grid-gap: 20px;
-    align-items: stretch;
+.tab-pane {
+  width: 100%;
+}
+.tab-pane > div {
+  justify-content: space-between;
+}
+#masthead{
+  background:#0000004d;;
 }

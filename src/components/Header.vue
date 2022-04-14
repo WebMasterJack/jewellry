@@ -1,51 +1,56 @@
 <template>
-    <div class="header">
+   <div class="cover-container d-flex w-100  mx-auto flex-column" id="cover">
+     
+     <div id="masthead">
+        <header class="masthead mb-auto">
         
-        <nav class="navbar navbar-expand-lg navbar-light  container">
-  <div class="container-fluid d-flex align-items-center">
-      <!-- <div class="logo"></div> -->
-    <button class="navbar-toggler bg-dark text-white w-100" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar" style="place-content:center">Меню</span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarNav">
+          
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Главная</a>
+            <a class="nav-link" href="#cards">Изделия</a>
+            <a class="nav-link" href="#">Услуги</a>
+            <a class="nav-link" href="#company">О компании</a>
+            <a class="nav-link" href="#contact">Контакты</a>
+          </nav>
         
-      <ul class="navbar-nav d-flex justify-content-between w-100">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Главная</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Кольца</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Серьги</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">Цепочки</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">Браслеты</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">Кресты</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">Кулоны</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">Подвески</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">Ремонт</a>
-        </li>
-      </ul>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Для справки</h1>
+        <div class="reference container">
+        <h3 style="text-align:justify;">Вес, размер камней может отличаться от написанного, всё индивидуально и зависит от личных предпочтений к изделию. Каталог представлен не в полном объёме, для подбора изделия на свой вкус связь во вкладке «контакты». Всегда на связи!</h3>
     </div>
-  </div>
-</nav>
+      </main>
+     </div>
+      
     </div>
+    
 </template>
 <script>
+// import Reference from '@/components/Reference.vue'
 export default {
     name: 'Header',
+    // components: Reference
 
 }
 </script>
+<style>
+#cover{
+    background-image: url(/img/file.d020642d.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+header{
+  display: flex;
+  justify-content: center;
+  height:10vh;
+}
+main{
+height:90vh;
+display: flex;
+    flex-direction: column;
+    place-content: end;
+    padding-bottom: 40px;
+}
+</style>

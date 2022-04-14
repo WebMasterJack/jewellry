@@ -1,12 +1,12 @@
 <template>
-    <div class="card-group container row row-cols-1">
+    <div class="card-group container" id="cards">
        <!-- <Card 
        :title="cards[0].title"
        :text="cards[0].text"
        /> -->
        
     
-       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+       <ul class="nav nav-pills mb-3 w-100" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" id="pills-rings-tab" data-bs-toggle="pill" data-bs-target="#pills-rings" type="button" role="tab" aria-controls="pills-rings" aria-selected="true">Кольца</button>
   </li>
@@ -29,18 +29,20 @@
     <button class="nav-link" id="pills-podveski-tab" data-bs-toggle="pill" data-bs-target="#pills-podveski" type="button" role="tab" aria-controls="pills-podveski" aria-selected="false">Подвески</button>
   </li>
 </ul>
-<div class="tab-content" id="pills-tabContent">
+<div class="tab-content w-100" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-rings" role="tabpanel" aria-labelledby="pills-rings-tab">
-<div class="rings">
+<div class="rings row row-cols-1 row-cols-md-3">
             <card-shablon title="АРТ 1001"  img="assets/img/rings/1.JPG" price="9 000"></card-shablon>
             <card-shablon title="АРТ 1002"  img="assets/img/rings/2.JPG" price="5 500"></card-shablon>
             <card-shablon title="АРТ 1003"  img="assets/img/rings/3.JPG" price="5 500"></card-shablon>
+            
        </div>
-        <div class="rings">
+        <div class="rings row row-cols-1 row-cols-md-3">
             <card-shablon title="АРТ 1004"  img="assets/img/rings/4.JPG" price="9 000"></card-shablon>
             <card-shablon title="АРТ 1005"  img="assets/img/rings/5.JPG" price="9 000"></card-shablon>
             <card-shablon title="АРТ 1006"  img="assets/img/rings/6.JPG" price="9 000"></card-shablon>
         </div>
+        
   </div>
   <div class="tab-pane fade" id="pills-sergi" role="tabpanel" aria-labelledby="pills-sergi-tab">sergi epta</div>
   <div class="tab-pane fade" id="pills-cepochki" role="tabpanel" aria-labelledby="pills-cepochki-tab">cepochki epta</div>

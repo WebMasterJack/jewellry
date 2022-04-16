@@ -1,11 +1,7 @@
 <template>
-    <div class="card-group container" id="cards">
-       <!-- <Card 
-       :title="cards[0].title"
-       :text="cards[0].text"
-       /> -->
-       
-    
+   <section id="cards">
+      <div class="card-group " id="cards">
+        <h1 class="text-center w-100">Изделия</h1>
        <ul class="nav nav-pills mb-3 w-100" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" id="pills-rings-tab" data-bs-toggle="pill" data-bs-target="#pills-rings" type="button" role="tab" aria-controls="pills-rings" aria-selected="true">Кольца</button>
@@ -31,53 +27,34 @@
 </ul>
 <div class="tab-content w-100" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-rings" role="tabpanel" aria-labelledby="pills-rings-tab">
-<div class="rings row row-cols-1 row-cols-md-3">
-            <card-shablon title="АРТ 1001"  img="assets/img/rings/1.JPG" price="9 000"></card-shablon>
-            <card-shablon title="АРТ 1002"  img="assets/img/rings/2.JPG" price="5 500"></card-shablon>
-            <card-shablon title="АРТ 1003"  img="assets/img/rings/3.JPG" price="5 500"></card-shablon>
-            
-       </div>
-        <div class="rings row row-cols-1 row-cols-md-3">
-            <card-shablon title="АРТ 1004"  img="assets/img/rings/4.JPG" price="9 000"></card-shablon>
-            <card-shablon title="АРТ 1005"  img="assets/img/rings/5.JPG" price="9 000"></card-shablon>
-            <card-shablon title="АРТ 1006"  img="assets/img/rings/6.JPG" price="9 000"></card-shablon>
-        </div>
-        
+    <Rings />
+    <button class="btn btn-primary" ><a href="/rings#cards" class="navlink">Показать все</a></button>
+    </div>
+  <div class="tab-pane fade" id="pills-sergi" role="tabpanel" aria-labelledby="pills-sergi-tab">
+    <Sergi />
+     <button class="btn btn-primary" ><a href="/sergi#cards" class="navlink">Показать все</a></button>
   </div>
-  <div class="tab-pane fade" id="pills-sergi" role="tabpanel" aria-labelledby="pills-sergi-tab">sergi epta</div>
   <div class="tab-pane fade" id="pills-cepochki" role="tabpanel" aria-labelledby="pills-cepochki-tab">cepochki epta</div>
   <div class="tab-pane fade" id="pills-braslet" role="tabpanel" aria-labelledby="pills-braslet-tab">braslet epta</div>
-  <div class="tab-pane fade" id="pills-krest" role="tabpanel" aria-labelledby="pills-krest-tab">krest epta</div>
+  <div class="tab-pane fade" id="pills-krest" role="tabpanel" aria-labelledby="pills-krest-tab">
+    <Kresti />
+    <button class="btn btn-primary" ><a href="/kresti#cards" class="navlink">Показать все</a></button>
+    </div>
   <div class="tab-pane fade" id="pills-kylon" role="tabpanel" aria-labelledby="pills-kylon-tab">kylon epta</div>
   <div class="tab-pane fade" id="pills-podveski" role="tabpanel" aria-labelledby="pills-podveski-tab">podveski epta</div>
 </div>
        
     </div>
-
-
-    
-
-
+   </section>
 </template>
 
 <script>
-import CardShablon from '@/components/CardShablon.vue'
+import Rings from '@/components/Rings.vue'
+import Sergi from '@/components/Sergi.vue'
+import Kresti from '@/components/Kresti.vue'
 export default {
     name: 'Cards',
-    components:{CardShablon},
-    // data(){
-    //     return {
-    //         cards:[
-    //             {
-    //             title:'Кирка',
-    //             text:'Киииииииииииирка',
-    //             },
-    //             {
-    //             title:'Кирка ломающая ееееееееее',
-    //             text:'Киркаавы',
-    //             }
-    //         ]
-    //     }
-    // }
+    components:{Rings,Sergi,Kresti},
+    
 }
 </script>

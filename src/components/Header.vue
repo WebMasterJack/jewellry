@@ -1,12 +1,13 @@
 <template>
-   <div class="cover-container d-flex w-100  mx-auto flex-column" id="cover">
+
+     <div class="cover-container d-flex w-100  mx-auto flex-column" id="cover">
      
      <div id="masthead">
         <header class="masthead mb-auto">
         
           
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Главная</a>
+            <a class="nav-link active" href="/">Главная</a>
             <a class="nav-link" href="#cards">Изделия</a>
             <a class="nav-link" href="#">Услуги</a>
             <a class="nav-link" href="#company">О компании</a>
@@ -25,6 +26,7 @@
       
     </div>
     
+
 </template>
 <script>
 // import Reference from '@/components/Reference.vue'
@@ -34,23 +36,3 @@ export default {
 
 }
 </script>
-<style>
-#cover{
-    background-image: url(/img/file.d020642d.gif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-header{
-  display: flex;
-  justify-content: center;
-  height:10vh;
-}
-main{
-height:90vh;
-display: flex;
-    flex-direction: column;
-    place-content: end;
-    padding-bottom: 40px;
-}
-</style>

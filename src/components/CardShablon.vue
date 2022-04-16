@@ -2,7 +2,7 @@
     <div class="card">
   <img class="card-img-top"  :src="img" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title"><a href="#" data-toggle="tooltip" data-placement="bottom" title='Перейти на страницу товара'>{{title}}</a></h5>
+    <h5 class="card-title"><a href="#" data-toggle="tooltip" data-placement="bottom" title='Перейти на страницу товара'>АРТ {{title}}</a></h5>
     <!-- <p class="card-text">Вес: {{text}}</p> -->
     <div class="card-bottom d-flex justify-content-between align-items-baseline ">
   

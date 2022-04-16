@@ -3,6 +3,7 @@
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: white;
+    background: #02192b;
   }
   .nav-link{
     color: white
@@ -10,12 +11,33 @@
   #pills-tab .nav-link.active {
     background-color: #0d273b !important;
   }
-
-  .container {
+section{
+  min-height:100vh;
+  padding-top:20px;
+  padding-bottom: 40px;
+}
+  section > div{
     margin: 0 auto;
+    max-width: 1300px;
+    
   }
-.home{
-  background: #02192b;
+  #cover{
+    background-image: url('/assets/img/file.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+header{
+  display: flex;
+  justify-content: center;
+  height:10vh;
+}
+main{
+height:90vh;
+display: flex;
+    flex-direction: column;
+    place-content: end;
+    padding-bottom: 40px;
 }
  a,.card-title a{
     transform: scale(1);
@@ -42,6 +64,10 @@
     display: flex;
     justify-content: space-evenly;
   }
+  .card-group h1{
+    width: 100%;
+    text-align: center;
+  }
  .card{
   max-width:400px;
   margin-bottom: 10px;
@@ -52,7 +78,7 @@
  .card-body{
    background:black;
  }
- .card-img-top{
+ .card-img-top {
   max-height: 300px;
   min-height: 300px;
   max-width: 400px;
@@ -104,3 +130,48 @@
 #masthead{
   background:#0000004d;;
 }
+#company{
+  background: #01111e;;
+}
+.company-text p{
+  text-align: justify; 
+  font-size: 20px;
+  font-weight:lighter;
+ 
+}
+.footer{
+  text-align: left;
+
+}
+.footer ul {
+ list-style:none;
+ padding: 0 
+}
+.phone{
+  background:url('/assets/img/phone.svg');
+
+}
+.telegram{
+  background:url('/assets/img/telegram.png');
+}
+.whatsapp{
+  background:url('/assets/img/whatsapp.png');
+}
+.vk{
+  background:url('/assets/img/vk.png');
+}
+.phone,.telegram,.whatsapp,.vk{
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  display:flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+
+.footer iframe{
+width: 100%;
+}
+

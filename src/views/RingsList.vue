@@ -1,6 +1,6 @@
 <template>
   <div class="rings-list">
-      <Header />
+     
     <div class="card-group container" id="cards">
      <h1>Все кольца</h1>
         <Rings />   
@@ -13,7 +13,7 @@
             <card-shablon title="1012"  img="assets/img/rings/12.JPG" price="9 000"></card-shablon>
         </div>
    </div>
-<Footer />
+
   </div>
 </template>
 
@@ -21,11 +21,10 @@
 // @ is an alias to /src
 import CardShablon from '@/components/CardShablon.vue'
 import Rings from '@/components/Rings.vue'
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
 export default {
   name: 'RingsList',
-  components: {Rings,Header,CardShablon,Footer}
+  components: {Rings,CardShablon},
+  
 }
 
 </script>

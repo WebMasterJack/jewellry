@@ -1,6 +1,6 @@
 <template>
   <div class="kresti-list">
-      <Header />
+
     <div class="card-group container" id="cards">
       <h1>Все кресты</h1>
         <Kresti />   
@@ -11,7 +11,7 @@
             <card-shablon title="5010"  img="assets/img/kresti/10.JPG" price="9 000"></card-shablon>
         </div>
    </div>
-   <Footer />
+
   </div>
 </template>
 
@@ -19,11 +19,9 @@
 // @ is an alias to /src
 import CardShablon from '@/components/CardShablon.vue'
 import Kresti from '@/components/Kresti.vue'
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
 export default {
   name: 'KrestiList',
-  components: {Kresti,Header,CardShablon,Footer}
+  components: {Kresti,CardShablon}
 }
 
 </script>

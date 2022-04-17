@@ -1,6 +1,6 @@
 <template>
   <div class="sergi-list">
-      <Header />
+    
     <div class="card-group container" id="cards">
       <h1>Все серьги</h1>
         <Sergi />   
@@ -11,7 +11,7 @@
             <card-shablon title="2010"  img="assets/img/sergi/10.JPG" price="9 000"></card-shablon>
         </div>
    </div>
-<Footer />
+
   </div>
 </template>
 
@@ -19,11 +19,10 @@
 // @ is an alias to /src
 import CardShablon from '@/components/CardShablon.vue'
 import Sergi from '@/components/Sergi.vue'
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
+
 export default {
   name: 'SergiList',
-  components: {Sergi,Header,CardShablon,Footer}
+  components: {Sergi,CardShablon}
 }
 
 </script>

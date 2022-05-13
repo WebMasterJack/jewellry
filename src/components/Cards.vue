@@ -26,13 +26,14 @@
   </li>
 </ul>
 <div class="tab-content w-100" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-rings" role="tabpanel" aria-labelledby="pills-rings-tab" >
+  <div class="tab-pane fade show active" id="pills-rings" role="tabpanel" aria-labelledby="pills-rings-tab">
     <div class="rings row row-cols-1 row-cols-md-3 w-100 justify-content-between" >
+<!--Card --- Работает, но появляется пустой блок -->
 
-      <div class="card"   v-for="card in database" :key="card.id" >
-      <card-shablon  :title=card.title :img=card.image_url :price=card.price></card-shablon>
+      <div class="card"   v-for="card in filterData(1)" :key="card.id" >
+      <card-shablon :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
-
+<!--Card end-->
     </div>
     
     <button class="btn btn-primary" ><a href="/rings#cards" class="navlink">Показать все</a></button>
@@ -69,6 +70,11 @@ export default {
    }
  
  },
+  methods:{
+    filterData(cat){
+      return this.database.filter(x=>x.category_id==cat);
+    }
+  },
  
  async mounted(){
         try{

@@ -10,28 +10,33 @@
     </button>
     
   </div>
-
+<!-- Modal --- Криво работает,кнопка прогружается после запроса -->
   <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" v-if="visible">
       <div class="modal-content bg-dark">
         <div class="row p-5">
             <div class="col-12">
+              
             <input type="name" class="form-control test-1-fps" placeholder="Имя" v-model="name" />
-            <p > {{errors[0].errors.name[0]}}</p>
+            
+            <p v-if="visibleError"> {{errors[0].errors.name[0]}}</p>
           </div>
           <div class="col-12 mt-2">
             <input type="phone" class="form-control test-1-fpn" placeholder="Телефон" v-model="phone" />
-            <p > {{errors[0].errors.phone[0]}}</p>
+            
+            <p v-if="visibleError"> {{errors[0].errors.phone[0]}}</p>
           </div>
           <div class="col-12 mt-2">
             <input type="email" class="form-control test-1-fps" placeholder="Почта" v-model="email" />
-            <p > {{errors[0].errors.email[0]}}</p>
+            
+            <p v-if="visibleError"> {{errors[0].errors.email[0]}}</p>
           </div>
           <div class="col-12 mt-2">
             <input type="password" class="form-control test-1-fps" placeholder="Пароль" v-model="password" />
-            <p > {{errors[0].errors.password[0]}}</p>
+            
+            <p v-if="visibleError"> {{errors[0].errors.password[0]}}</p>
           </div>
-
+            
           <div class="col-12 mt-4">
             <button class="btn btn-primary w-100 test-1-fbs" @click="register(name,phone,email,password)">Готово</button>
             <div class="text-center mt-2">Уже зарегистрированы?</div>
@@ -63,7 +68,7 @@
     </div>
     
   </div>
-
+<!-- Modal --- end -->
 
 
 
@@ -84,15 +89,20 @@ export default {
             email: '',
             password: '',
             visible:true,
+            visibleError:false,
         }
+        
     },
     
   name: "Register",
   methods:{
       reglog(){
           this.visible= !this.visible;
+       
       },
       async register() {
+        
+       
             let data = {
                 name: this.name,
                 phone: this.phone,
@@ -112,12 +122,12 @@ export default {
             this.$router.replace({name:'Profile',params:{name,phone,email,password}});
           }else{
                let json = await response.json();
-            
+              this.visibleError=!this.visibleError;
               this.errors.push(json.error);
                console.log(this.errors[0].errors);
               
           }
-          console.log(response,this.phone,this.password,this.name,this.email);
+          console.log(response,this.name,this.phone,this.email,this.password);
         },
         async login() {
             let data = {

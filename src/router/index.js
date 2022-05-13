@@ -4,6 +4,8 @@ import RingsList from '../views/RingsList.vue'
 import SergiList from '../views/SergiList.vue'
 import KrestiList from '../views/KrestiList.vue'
 import CardPage from '../views/CardPage.vue'
+import Register from '../views/Register.vue'
+import Profile from '../views/Profile.vue'
 const routes = [
   {
     path: '/',
@@ -29,6 +31,16 @@ const routes = [
     path: '/card-page',
     name: 'CardPage',
     component: CardPage
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
   },
 ]
 

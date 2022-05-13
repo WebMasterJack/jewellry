@@ -26,8 +26,15 @@
   </li>
 </ul>
 <div class="tab-content w-100" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-rings" role="tabpanel" aria-labelledby="pills-rings-tab">
-    <Rings />
+  <div class="tab-pane fade show active" id="pills-rings" role="tabpanel" aria-labelledby="pills-rings-tab" >
+    <div class="rings row row-cols-1 row-cols-md-3 w-100 justify-content-between" >
+
+      <div class="card"   v-for="card in database" :key="card.id" >
+      <card-shablon  :title=card.title :img=card.image_url :price=card.price></card-shablon>
+    </div>
+
+    </div>
+    
     <button class="btn btn-primary" ><a href="/rings#cards" class="navlink">Показать все</a></button>
     </div>
   <div class="tab-pane fade" id="pills-sergi" role="tabpanel" aria-labelledby="pills-sergi-tab">
@@ -49,12 +56,38 @@
 </template>
 
 <script>
-import Rings from '@/components/Rings.vue'
+
 import Sergi from '@/components/Sergi.vue'
 import Kresti from '@/components/Kresti.vue'
+import CardShablon from '@/components/CardShablon.vue'
 export default {
+  data(){
+   
+   return{
+     database:[],
+   errors:[]
+   }
+ 
+ },
+ 
+ async mounted(){
+        try{
+          let url = 'http://localhost:8000/api/products';
+      let response = await fetch(url);
+
+      const result = await response.json(); // читаем ответ в формате JSON
+     
+      this.database.push(...result.products);
+     console.log(this.database)
+
+        }catch(error){
+this.errors.push(error);
+ 
+        }
+        
+                },
     name: 'Cards',
-    components:{Rings,Sergi,Kresti},
+    components:{Sergi,Kresti,CardShablon},
     
 }
 </script>

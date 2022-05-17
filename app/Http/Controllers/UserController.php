@@ -9,13 +9,24 @@ class UserController extends Controller
 {
     public function registration(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $rules = array(
             'name' => 'required',
-            'phone' => 'required|unique:users|numeric|digits:11',
+            'phone'=>array('required','unique:users','digits:11','numeric'),
             'email' => 'required',
             'status'=> "guest",
             'password' => 'required',
-        ]);
+        );    
+        $messages = array(
+                'name.required' => 'Заполните имя',
+                'phone.required' => 'Заполните номер',
+                'phone.unique' => 'Такой номер уже используется',
+                'phone.digits'=>'Неправильный номер',
+                'phone.numeric' => 'Используйте только цифры',
+                'email.required' => 'Заполните email',
+                'password.required' => 'Заполните пароль',
+
+            );
+        $validator = Validator::make($request->all(),$rules,$messages);
 
         if($validator->fails()) {
             return response()->json([
@@ -23,6 +34,7 @@ class UserController extends Controller
                     'code' => 422,
                     'message' => 'Validation error',
                     'errors' => $validator->errors(),
+             
                 ]
             ], 422);
         }
@@ -71,4 +83,5 @@ class UserController extends Controller
             ]
         ], 401);
     }
+    
 }

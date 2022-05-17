@@ -18,23 +18,23 @@
             <div class="col-12">
               
             <input type="name" class="form-control test-1-fps" placeholder="Имя" v-model="name" />
+            <p v-if="visibleError"> {{errors[0].name}}</p>
             
-            <p v-if="visibleError"> {{errors[0].errors.name[0]}}</p>
           </div>
           <div class="col-12 mt-2">
             <input type="phone" class="form-control test-1-fpn" placeholder="Телефон" v-model="phone" />
+            <p v-if="visibleError"> {{errors[0].phone}}</p>
             
-            <p v-if="visibleError"> {{errors[0].errors.phone[0]}}</p>
           </div>
           <div class="col-12 mt-2">
             <input type="email" class="form-control test-1-fps" placeholder="Почта" v-model="email" />
+            <p v-if="visibleError"> {{errors[0].email}}</p>
             
-            <p v-if="visibleError"> {{errors[0].errors.email[0]}}</p>
           </div>
           <div class="col-12 mt-2">
             <input type="password" class="form-control test-1-fps" placeholder="Пароль" v-model="password" />
+            <p v-if="visibleError"> {{errors[0].password}}</p>
             
-            <p v-if="visibleError"> {{errors[0].errors.password[0]}}</p>
           </div>
             
           <div class="col-12 mt-4">
@@ -96,35 +96,35 @@ export default {
     
   name: "Register",
   methods:{
-      reglog(){
-          this.visible= !this.visible;
-       
-      },
+      reglog(){this.visible= !this.visible;},
       async register() {
-        
-       
+        this.errors.length = 0;
             let data = {
                 name: this.name,
                 phone: this.phone,
                 email:this.email,
                 password: this.password,
-                
             };
           const response = await fetch("http://localhost:8000/api/register", {
             method: "POST",
             body:JSON.stringify(data),
             headers: {'Content-Type': 'application/json'},
-            
           });
-          if (response.ok) { // если HTTP-статус в диапазоне 200-299
-            
+          if (response.ok) 
+          { 
+            // если HTTP-статус в диапазоне 200-299
             let {name,phone,email,password}=this;
             this.$router.replace({name:'Profile',params:{name,phone,email,password}});
-          }else{
+          }
+          else
+          {
                let json = await response.json();
-              this.visibleError=!this.visibleError;
-              this.errors.push(json.error);
-               console.log(this.errors[0].errors);
+              this.visibleError=!json.ok;
+            
+              this.errors.push(json.error.errors);
+             
+               console.log(this.errors);
+                
               
           }
           console.log(response,this.name,this.phone,this.email,this.password);
@@ -137,17 +137,21 @@ export default {
                 password: this.password,
                 
             };
-          const response = await fetch("http://localhost:8000/api/login", {
+          const response = await fetch("http://localhost:8000/api/login", 
+          {
             method: "POST",
             body:JSON.stringify(data),
             headers: {'Content-Type': 'application/json'},
             
           });
-          if (response.ok) { // если HTTP-статус в диапазоне 200-299
-            
+          if (response.ok) 
+          {
+             // если HTTP-статус в диапазоне 200-299
             let {phone,password}=this;
             this.$router.replace({name:'Profile',params:{phone,password}});
-          }else{
+          }
+          else
+          {
               console.log(123)
           }
           console.log(this.phone,this.password);

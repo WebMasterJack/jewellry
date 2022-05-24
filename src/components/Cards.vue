@@ -31,12 +31,12 @@
 <!--Card --- Работает, но появляется пустой блок -->
 
       <div class="card"   v-for="card in filterData(1)" :key="card.id" >
-      <card-shablon :title=card.title :img=card.image_url :price=card.price></card-shablon>
+      <card-shablon :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
 <!--Card end-->
     </div>
     
-    <button class="btn btn-primary" ><a href="/rings#cards" class="navlink">Показать все</a></button>
+    <button class="btn btn-primary" ><a href="#" class="navlink" >Показать все</a></button>
     </div>
   <div class="tab-pane fade" id="pills-sergi" role="tabpanel" aria-labelledby="pills-sergi-tab">
     <Sergi />
@@ -62,36 +62,42 @@ import Sergi from '@/components/Sergi.vue'
 import Kresti from '@/components/Kresti.vue'
 import CardShablon from '@/components/CardShablon.vue'
 export default {
-  data(){
+  data()
+  {
    
    return{
-     database:[],
-   errors:[]
+    database:[],
+    errors:[]
    }
  
- },
-  methods:{
-    filterData(cat){
+  },
+  methods:
+  {
+    filterData(cat)
+    {
       return this.database.filter(x=>x.category_id==cat);
-    }
+    },
+   
   },
  
- async mounted(){
-        try{
+ async  mounted()
+ {
+        try
+        {
           let url = 'http://localhost:8000/api/products';
-      let response = await fetch(url);
+          let response = await fetch(url);
+          const result = await response.json(); // читаем ответ в формате JSON
+          this.database.push(...result.products);
+          console.log(this.database)
 
-      const result = await response.json(); // читаем ответ в формате JSON
-     
-      this.database.push(...result.products);
-     console.log(this.database)
-
-        }catch(error){
-this.errors.push(error);
- 
+        }
+        catch(error)
+        {
+          this.errors.push(error);
         }
         
-                },
+  },
+  
     name: 'Cards',
     components:{Sergi,Kresti,CardShablon},
     

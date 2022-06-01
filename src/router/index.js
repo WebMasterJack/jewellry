@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import RingsList from '../views/RingsList.vue'
-import SergiList from '../views/SergiList.vue'
-import KrestiList from '../views/KrestiList.vue'
 import CardPage from '../views/CardPage.vue'
 import Register from '../views/Register.vue'
 import Profile from '../views/Profile.vue'
@@ -12,21 +9,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/rings',
-    name: 'RingsList',
-    component: RingsList
-  },
-  {
-    path: '/sergi',
-    name: 'SergiList',
-    component: SergiList
-  },
-  {
-    path: '/kresti',
-    name: 'KrestiList',
-    component: KrestiList
   },
   {
     path: '/card-page',

@@ -44,33 +44,38 @@
       <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
 
-     <button class="btn btn-primary" ><a href="/sergi#cards" class="navlink">Показать все</a></button>
+      <button class="btn btn-primary" ><a href="/products/2" class="navlink" @click="routeList()">Показать все</a></button>
   </div>
   <div class="tab-pane fade" id="pills-cepochki" role="tabpanel" aria-labelledby="pills-cepochki-tab">
      <div class="card"   v-for="card in filterData(3)" :key="card.id" >
       <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
+     <button class="btn btn-primary" ><a href="/products/3" class="navlink" @click="routeList()">Показать все</a></button>
   </div>
   <div class="tab-pane fade" id="pills-braslet" role="tabpanel" aria-labelledby="pills-braslet-tab">
      <div class="card"   v-for="card in filterData(4)" :key="card.id" >
       <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
+     <button class="btn btn-primary" ><a href="/products/4" class="navlink" @click="routeList()">Показать все</a></button>
   </div>
   <div class="tab-pane fade" id="pills-krest" role="tabpanel" aria-labelledby="pills-krest-tab">
      <div class="card"   v-for="card in filterData(5)" :key="card.id" >
       <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
-    <button class="btn btn-primary" ><a href="/kresti#cards" class="navlink">Показать все</a></button>
+     <button class="btn btn-primary" ><a href="/products/5" class="navlink" @click="routeList()">Показать все</a></button>
+ 
     </div>
   <div class="tab-pane fade" id="pills-kylon" role="tabpanel" aria-labelledby="pills-kylon-tab">
      <div class="card"   v-for="card in filterData(6)" :key="card.id" >
       <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
+     <button class="btn btn-primary" ><a href="/products/6" class="navlink" @click="routeList()">Показать все</a></button>
   </div>
   <div class="tab-pane fade" id="pills-podveski" role="tabpanel" aria-labelledby="pills-podveski-tab">
      <div class="card"   v-for="card in filterData(7)" :key="card.id" >
       <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
+     <button class="btn btn-primary" ><a href="/products/7" class="navlink" @click="routeList()">Показать все</a></button>
   </div>
 </div>
        

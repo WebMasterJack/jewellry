@@ -4,7 +4,7 @@
         <h1 class="text-center w-100">Изделия</h1>
        <ul class="nav nav-pills mb-3 w-100" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="pills-rings-tab" data-bs-toggle="pill" data-bs-target="#pills-rings" type="button" role="tab" aria-controls="pills-rings" aria-selected="true">Кольца</button>
+    <button class="nav-link active" id="pills-rings-tab" data-bs-toggle="pill" data-bs-target="#pills-rings" type="button" role="tab" aria-controls="pills-rings" aria-selected="true" data-cat="1">Кольца</button>
   </li>
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="pills-sergi-tab" data-bs-toggle="pill" data-bs-target="#pills-sergi" type="button" role="tab" aria-controls="pills-sergi" aria-selected="false">Серьги</button>
@@ -31,25 +31,47 @@
 <!--Card --- Работает, но появляется пустой блок -->
 
       <div class="card"   v-for="card in filterData(1)" :key="card.id" >
-      <card-shablon :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
 <!--Card end-->
     </div>
     
-    <button class="btn btn-primary" ><a href="#" class="navlink" >Показать все</a></button>
+    <button class="btn btn-primary" ><a href="?category_id=1" class="navlink" @click="routeList()">Показать все</a></button>
     </div>
   <div class="tab-pane fade" id="pills-sergi" role="tabpanel" aria-labelledby="pills-sergi-tab">
-    <Sergi />
+
+    <div class="card"   v-for="card in filterData(2)" :key="card.id" >
+      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+    </div>
+
      <button class="btn btn-primary" ><a href="/sergi#cards" class="navlink">Показать все</a></button>
   </div>
-  <div class="tab-pane fade" id="pills-cepochki" role="tabpanel" aria-labelledby="pills-cepochki-tab">cepochki epta</div>
-  <div class="tab-pane fade" id="pills-braslet" role="tabpanel" aria-labelledby="pills-braslet-tab">braslet epta</div>
+  <div class="tab-pane fade" id="pills-cepochki" role="tabpanel" aria-labelledby="pills-cepochki-tab">
+     <div class="card"   v-for="card in filterData(3)" :key="card.id" >
+      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-braslet" role="tabpanel" aria-labelledby="pills-braslet-tab">
+     <div class="card"   v-for="card in filterData(4)" :key="card.id" >
+      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+    </div>
+  </div>
   <div class="tab-pane fade" id="pills-krest" role="tabpanel" aria-labelledby="pills-krest-tab">
-    <Kresti />
+     <div class="card"   v-for="card in filterData(5)" :key="card.id" >
+      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+    </div>
     <button class="btn btn-primary" ><a href="/kresti#cards" class="navlink">Показать все</a></button>
     </div>
-  <div class="tab-pane fade" id="pills-kylon" role="tabpanel" aria-labelledby="pills-kylon-tab">kylon epta</div>
-  <div class="tab-pane fade" id="pills-podveski" role="tabpanel" aria-labelledby="pills-podveski-tab">podveski epta</div>
+  <div class="tab-pane fade" id="pills-kylon" role="tabpanel" aria-labelledby="pills-kylon-tab">
+     <div class="card"   v-for="card in filterData(6)" :key="card.id" >
+      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-podveski" role="tabpanel" aria-labelledby="pills-podveski-tab">
+     <div class="card"   v-for="card in filterData(7)" :key="card.id" >
+      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+    </div>
+  </div>
 </div>
        
     </div>
@@ -58,8 +80,7 @@
 
 <script>
 
-import Sergi from '@/components/Sergi.vue'
-import Kresti from '@/components/Kresti.vue'
+
 import CardShablon from '@/components/CardShablon.vue'
 export default {
   data()
@@ -75,9 +96,16 @@ export default {
   {
     filterData(cat)
     {
+      this.catID=cat;
       return this.database.filter(x=>x.category_id==cat);
+
     },
-   
+   routeList(e){
+
+    //  let {catID} = this;
+    let catID=e.target.href;
+     this.$router.push({name:'Products',params:{catID}})
+   }
   },
  
  async  mounted()
@@ -99,7 +127,7 @@ export default {
   },
   
     name: 'Cards',
-    components:{Sergi,Kresti,CardShablon},
+    components:{CardShablon},
     
 }
 </script>

@@ -6,6 +6,7 @@ import KrestiList from '../views/KrestiList.vue'
 import CardPage from '../views/CardPage.vue'
 import Register from '../views/Register.vue'
 import Profile from '../views/Profile.vue'
+import Products from '../views/Products.vue'
 const routes = [
   {
     path: '/',
@@ -41,6 +42,11 @@ const routes = [
     path: '/profile',
     name: 'Profile',
     component: Profile
+  },
+  {
+    path: '/products',
+    name: 'Products',
+    component: Products
   },
 ]
 

@@ -2,7 +2,7 @@
   <div class="rings-list">
      
     <div class="card-group container" id="cards">
-     <h1>Все кольца</h1>
+     <h1>Все кольца {{catID}}</h1>
         <Rings />   
         <div class="rings row row-cols-1 row-cols-md-3 w-100 justify-content-between">
             <card-shablon title="1007"  img="assets/img/rings/7.JPG" price="9 000"></card-shablon>
@@ -22,9 +22,18 @@
 import CardShablon from '@/components/CardShablon.vue'
 import Rings from '@/components/Rings.vue'
 export default {
+  data(){
+    return{
+      catID:this.$route.params.catID
+    }
+  },
   name: 'RingsList',
   components: {Rings,CardShablon},
-  
+ methods:{
+   sortId(){
+     
+   }
+ } 
 }
 
 </script>

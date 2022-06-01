@@ -36,7 +36,7 @@
 <!--Card end-->
     </div>
     
-    <button class="btn btn-primary" ><a href="?category_id=1" class="navlink" @click="routeList()">Показать все</a></button>
+    <button class="btn btn-primary" ><a href="/products/1" class="navlink" @click="routeList()">Показать все</a></button>
     </div>
   <div class="tab-pane fade" id="pills-sergi" role="tabpanel" aria-labelledby="pills-sergi-tab">
 
@@ -100,11 +100,11 @@ export default {
       return this.database.filter(x=>x.category_id==cat);
 
     },
-   routeList(e){
+   routeList(){
 
     //  let {catID} = this;
-    let catID=e.target.href;
-     this.$router.push({name:'Products',params:{catID}})
+    // let catID=e.target.href;
+     this.$router.replace({name:'Products'})
    }
   },
  

@@ -44,9 +44,10 @@ const routes = [
     component: Profile
   },
   {
-    path: '/products',
+    path: '/products/:id',
     name: 'Products',
-    component: Products
+    component: Products,
+    
   },
 ]
 

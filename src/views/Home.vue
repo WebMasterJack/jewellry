@@ -1,10 +1,9 @@
 <template>
   <div class="home">
-    <p>fdsfds </p>
+  
     <Cards />    
-    <Company />dsa
+    <Company />
    
-    <button>dbbdbdbdbdbdbdbbdbdb</button>
   </div>
 </template>
 
@@ -16,17 +15,7 @@ import Company from '@/components/Company.vue'
 
 
 export default {
-  
- 
   name: 'Home',
-  // props: {
-  //   ars:{
-  //    required: true,
-  //   default: {
-  //     title: 'test'
-  //   }
-  //   }
-  // },
   components: {
     Cards,Company
   },

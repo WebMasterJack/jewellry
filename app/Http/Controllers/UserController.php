@@ -7,15 +7,27 @@ use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
+  
+  
     public function registration(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $rules = array(
             'name' => 'required',
-            'phone' => 'required|unique:users|numeric|digits:11',
+            'phone' => array('required','unique:users','numeric','digits:11'),
             'email' => 'required',
             'status'=> "guest",
             'password' => 'required',
-        ]);
+    );
+        $messages = array(
+            'name.required' => 'Заполните имя',
+            'phone.required' => 'Заполните номер',
+            'phone.unique' => 'Такой номер уже используется',
+            'phone.numeric' => 'Используйте только цифры',
+            'phone.digits' => 'Неправльный номер',
+            'email.required' => 'Заполните email',
+            'password.required' => 'Заполните пароль',
+        );
+        $validator = Validator::make($request->all(), $rules,$messages);
 
         if($validator->fails()) {
             return response()->json([
@@ -34,10 +46,17 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'phone' => 'required',
+        $rules = array(
+            'phone' => array('required','numeric','digits:11'),
             'password' => 'required',
-        ]);
+    );
+        $messages = array(
+            'phone.required' => 'Заполните номер',
+            'phone.numeric' => 'Используйте только цифры',
+            'phone.digits' => 'Неправльный номер',
+            'password.required' => 'Заполните пароль',
+        );
+        $validator = Validator::make($request->all(), $rules,$messages);
 
         if($validator->fails()) {
             return response()->json([
@@ -53,7 +72,7 @@ class UserController extends Controller
             if($request->password == $user->password) {
                 return response()->json([
                     'data' => [
-                         'answer' => "AUTH ------ OK", //$user->generateToken(),
+                         'answer' => "AUTH ------ OK", 
                     ],
                 ]);
             }
@@ -64,8 +83,8 @@ class UserController extends Controller
                 'code' => 401,
                 'message' => 'Unauthorized',
                 'errors' => [
-                    'phone' => [
-                        'phone or password incorrect',
+                    'pp' => [
+                        'Неправильный логин или пароль',
                     ]
                 ],
             ]

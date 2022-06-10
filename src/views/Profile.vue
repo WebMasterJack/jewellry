@@ -1,13 +1,37 @@
 <template>
 <div class="profile">
-ID: {{this.id}} <br>
-Имя: {{database[0]===undefined?"":database[0].name}}<br> 
-Номер: {{database[0]===undefined?"":database[0].phone}}
+<div class="info p-5">
+  <div class="image"></div>
+    <div class="info-text">
+      <p>Ваш ID: {{this.id}}</p> 
+      <p>Имя: {{database[0]===undefined?"":database[0].name}}</p>
+      <p>Номер: {{database[0]===undefined?"":database[0].phone}}</p>
+    </div>
+  </div>
 </div>    
 </template>
 <style scoped>
 main h1,main div{
     display: none;
+}
+.profile{
+  background: #01111e;
+}
+.info {
+  text-align: left;
+  margin: 0 auto;
+  max-width:1000px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 200px 200px;
+  gap: 20px;
+  align-items: center;
+  justify-content: left;
+}
+.image{
+  background-image: url("http://localhost:8080/assets/img/user.jpg");
+  height:200px;
+  background-repeat: no-repeat;
 }
 </style>
 <script>

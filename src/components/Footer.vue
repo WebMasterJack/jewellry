@@ -6,8 +6,8 @@
                         <h3>Навигациия</h3>
                         <ul>
                             <li><a href="/">Главная</a></li>
-                            <li><a href="#cards">Изделия</a></li>
-                            <li><a href="#yslygi">Услуги</a></li>
+                            <li><a href="/#cards">Изделия</a></li>
+                            <li><a href="/#yslygi">Услуги</a></li>
                             <li><a href="/#company">О компании</a></li>
                         </ul>
                     </div>
@@ -15,8 +15,8 @@
                         <h3 id="contact">Контакты</h3>
                         <ul>
                             <li class="phone"><a href="tel:+79206244959">+79206244959</a></li>
-                            <li class="telegram"><a href="#">@cssandphp</a></li>
-                            <li class="whatsapp"><a href="#">+79206244959</a></li>
+                            <li class="telegram"><a href="https://t.me/poostolov">@poostolov</a></li>
+                            <li class="whatsapp"><a href="https://api.whatsapp.com/send?phone=79206244959">+79206244959</a></li>
                             <li class="vk"><a href="https://vk.com/id232424795">id232424795</a></li>
                         </ul>
                     </div>

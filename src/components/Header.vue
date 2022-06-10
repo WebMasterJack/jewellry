@@ -8,19 +8,20 @@
           
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="/">Главная</a>
-            <a class="nav-link" href="#cards">Изделия</a>
-            <a class="nav-link" href="#">Услуги</a>
-            <a class="nav-link" href="#company">О компании</a>
+            <a class="nav-link" href="/#cards">Изделия</a>
+            <a class="nav-link" href="/#yslygi">Услуги</a>
+            <a class="nav-link" href="/#company">О компании</a>
             <a class="nav-link" href="#contact">Контакты</a>
-            <button
-      type="button"
-      class="btn btn-primary h-75 mt-1"
+            <a
+      href="#"
+      class="nav-link"
       data-bs-toggle="modal"
       data-bs-target="#modal"
     >
       Войти
-    </button>
+    </a>
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <button id="close" type="button" data-bs-dismiss="modal" style="display:none"></button>
     <div class="modal-dialog" v-if="visible">
       <div class="modal-content bg-dark">
         <div class="row p-5">
@@ -132,7 +133,7 @@ export default {
           });
           if (response.ok) 
           { 
-            // если HTTP-статус в диапазоне 200-299
+            document.querySelector("#close").click();
             let {name,phone,email,password}=this;
             this.$router.replace({name:'Profile',params:{name,phone,email,password}});
           }
@@ -167,12 +168,15 @@ export default {
           });
           if (response.ok) 
           {
+          document.querySelector("#close").click();
           const result = await response.json(); // читаем ответ в формате JSON
           let id=result.data.id;
           this.$router.push({name:'Profile',params:{id}});
+          
           }
           else
           {
+            
             let json = await response.json();
               this.visibleError=!json.ok;
             

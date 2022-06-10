@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
     Route::post('/login', 'App\Http\Controllers\UserController@login');
     Route::get('/products', 'App\Http\Controllers\ProductsController@all');
     Route::get('/products/{category_id}', 'App\Http\Controllers\ProductsController@byID');
+    Route::get('/profile/{id}', 'App\Http\Controllers\UserController@profile');
    
    
 

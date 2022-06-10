@@ -73,7 +73,8 @@ class UserController extends Controller
             if($request->password == $user->password) {
                 return response()->json([
                     'data' => [
-                         'answer' => "AUTH ------ OK", 
+                         'answer' => "AUTH ------ OK",
+                         'id'=> $user->id 
                     ],
                 ]);
             }
@@ -90,6 +91,18 @@ class UserController extends Controller
                 ],
             ]
         ], 401);
+    }
+    public function profile(Request $request){
+        $profile = User::where('id', $request->id)->first();
+        return response()->json([
+            
+            'profile'=> [
+                'id'=>$profile->id,
+                'name'=>$profile->name,
+                'phone'=>$profile->phone,
+                'email'=>$profile->email,
+            ],
+        ]);
     }
     
 }

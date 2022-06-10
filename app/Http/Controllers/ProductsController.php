@@ -14,4 +14,9 @@ class ProductsController extends Controller
            
         ], 200);
     }
+    public function byID(Request $request){
+        return response()->json([
+            'products'=> Products::where('category_id', $request->category_id)->get(),
+        ],200);
+    }
 }

@@ -35,6 +35,7 @@ class UserController extends Controller
                     'code' => 422,
                     'message' => 'Validation error',
                     'errors' => $validator->errors(),
+             
                 ]
             ], 422);
         }
@@ -90,4 +91,5 @@ class UserController extends Controller
             ]
         ], 401);
     }
+    
 }

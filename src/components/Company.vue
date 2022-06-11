@@ -21,7 +21,7 @@
       </p>
         </div>
         <div class="host row row-cols-1 row-cols-md-2">
-            <img src="/assets/img/host.jpg" width="300px" height="800px">
+            <img src="/assets/img/host.jpg" width="300px" height="600px">
             <div class="host-info">
                 <h2>Постолов В.А</h2>
                 <p>Владелец ювелирной мастерской</p>

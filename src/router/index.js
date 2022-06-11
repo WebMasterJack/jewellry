@@ -4,6 +4,7 @@ import CardPage from '../views/CardPage.vue'
 import Register from '../views/Register.vue'
 import Profile from '../views/Profile.vue'
 import Products from '../views/Products.vue'
+import Service from '../views/Service.vue'
 const routes = [
   {
     path: '/',
@@ -29,6 +30,12 @@ const routes = [
     path: '/products/:id',
     name: 'Products',
     component: Products,
+    
+  },
+  {
+    path: '/service',
+    name: 'Service',
+    component: Service,
     
   },
 ]

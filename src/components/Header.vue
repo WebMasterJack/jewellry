@@ -9,17 +9,10 @@
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="/">Главная</a>
             <a class="nav-link" href="/#cards">Изделия</a>
-            <a class="nav-link" href="/#yslygi">Услуги</a>
+            <a class="nav-link" href="/service#service">Услуги</a>
             <a class="nav-link" href="/#company">О компании</a>
             <a class="nav-link" href="#contact">Контакты</a>
-            <a
-      href="#"
-      class="nav-link"
-      data-bs-toggle="modal"
-      data-bs-target="#modal"
-    >
-      Войти
-    </a>
+            <a href="#" class="nav-link" data-bs-toggle="modal"  data-bs-target="#modal">Войти</a>
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <button id="close" type="button" data-bs-dismiss="modal" style="display:none"></button>
     <div class="modal-dialog" v-if="visible">

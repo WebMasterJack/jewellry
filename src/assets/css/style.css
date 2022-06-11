@@ -11,6 +11,9 @@
   #pills-tab .nav-link.active {
     background-color: #0d273b !important;
   }
+  .rings{
+    margin: 0;
+  }
 section{
   min-height:100vh;
   padding-top:20px;
@@ -70,7 +73,8 @@ display: flex;
   }
  .card{
   max-width:400px;
-  margin-bottom: 10px;
+  min-width: 400px;
+  margin: 0px auto 20px auto;
   padding: 0;
   border:none;
   color:whitesmoke;
@@ -131,7 +135,8 @@ display: flex;
   background:#0000004d;;
 }
 #company{
-  background: #01111e;;
+  background: #01111e;
+  padding: 12px;
 }
 .company-text p{
   text-align: justify; 

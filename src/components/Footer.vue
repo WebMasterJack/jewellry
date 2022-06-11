@@ -7,7 +7,7 @@
                         <ul>
                             <li><a href="/">Главная</a></li>
                             <li><a href="/#cards">Изделия</a></li>
-                            <li><a href="/#yslygi">Услуги</a></li>
+                            <li><a href="/service#service">Услуги</a></li>
                             <li><a href="/#company">О компании</a></li>
                         </ul>
                     </div>

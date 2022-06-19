@@ -11,9 +11,6 @@
   #pills-tab .nav-link.active {
     background-color: #0d273b !important;
   }
-  .rings{
-    margin: 0;
-  }
 section{
   min-height:100vh;
   padding-top:20px;

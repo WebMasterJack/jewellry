@@ -31,7 +31,7 @@
 
 
       <div class="card"   v-for="card in filterData(1)" :key="card.id" >
-      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+      <card-shablon :catID=card.category_id :cardID=card.id  :descStatus=false :text=card.description art="АРТ" :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
 
     </div>
@@ -44,7 +44,7 @@
 
 
       <div class="card"   v-for="card in filterData(2)" :key="card.id" >
-      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+      <card-shablon :catID=card.category_id :cardID=card.id :descStatus=false :text=card.description art="АРТ" :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
 
     </div>
@@ -56,7 +56,7 @@
 
 
       <div class="card"   v-for="card in filterData(3)" :key="card.id" >
-      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+      <card-shablon :catID=card.category_id :cardID=card.id :descStatus=false :text=card.description art="АРТ" :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
 
     </div>
@@ -67,7 +67,7 @@
 
 
       <div class="card"   v-for="card in filterData(4)" :key="card.id" >
-      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+      <card-shablon :catID=card.category_id :cardID=card.id :descStatus=false :text=card.description art="АРТ" :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
 
     </div>
@@ -78,7 +78,7 @@
 
 
       <div class="card"   v-for="card in filterData(5)" :key="card.id" >
-      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+      <card-shablon :catID=card.category_id :cardID=card.id :descStatus=false :text=card.description art="АРТ" :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
 
     </div>
@@ -90,7 +90,7 @@
 
 
       <div class="card"   v-for="card in filterData(6)" :key="card.id" >
-      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+      <card-shablon :catID=card.category_id :cardID=card.id :descStatus=false :text=card.description art="АРТ" :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
 
     </div>
@@ -101,7 +101,7 @@
 
 
       <div class="card"   v-for="card in filterData(7)" :key="card.id" >
-      <card-shablon :catID=card.category_id :cardID=card.id :title=card.title :img=card.image_url :price=card.price></card-shablon>
+      <card-shablon :catID=card.category_id :cardID=card.id :descStatus=false :text=card.description art="АРТ" :title=card.title :img=card.image_url :price=card.price></card-shablon>
     </div>
 
     </div>

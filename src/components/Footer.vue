@@ -12,8 +12,8 @@
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3 item">
-                        <h3 id="contact">Контакты</h3>
-                        <ul>
+                        <h3 >Контакты</h3>
+                        <ul id="contact">
                             <li class="phone"><a href="tel:+79206244959">+79206244959</a></li>
                             <li class="telegram"><a href="https://t.me/poostolov">@poostolov</a></li>
                             <li class="whatsapp"><a href="https://api.whatsapp.com/send?phone=79206244959">+79206244959</a></li>

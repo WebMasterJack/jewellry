@@ -5,7 +5,7 @@
         <img :src=img alt="">
         <div class="info">
             <div class="title display-5 bg-primary">{{art}} {{title}}</div>
-            <div class="description">{{text}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo tempora qui quibusdam esse praesentium adipisci deleniti nam eligendi animi illo dicta numquam commodi illum corporis deserunt, unde in? Aliquid, beatae?</div>
+            <div class="description">{{text}} </div>
             <div class="bottom-info d-flex justify-content-evenly align-items-center">
                 <div class="price">от {{price}}₽</div>
              <a  @click="contact" href="#contact" class="btn btn-primary w-25">Написать</a>
